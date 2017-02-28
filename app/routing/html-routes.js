@@ -1,0 +1,18 @@
+// this will help direct the user..when user clicks on the links, gives back specific links..
+var path = require("path");
+
+module.exports = function (app) {
+
+	// viewed at http://localhost:8080
+	app.get('/tables', function(req, res) {
+	    res.sendFile(path.join(__dirname + '/../public/tables.html'));
+	});
+
+	app.get('/reserve', function(req, res) {
+	    res.sendFile(path.join(__dirname + '/../public/reserve.html'));
+	});
+
+	app.get('/', function(req, res) {
+	    res.sendFile(path.join(__dirname + '/../home.html'));
+	});
+}
